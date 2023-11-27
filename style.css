@@ -11,11 +11,12 @@ html {
   font-size: 62.5%;
 }
 
+picture,
 img {
   display: block;
-  max-inline-size: 100%;
-  block-size: auto;
-  object-fit: contain;
+}
+img {
+  width: 100%;
 }
 
 input,
@@ -27,13 +28,18 @@ textarea {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: hsl(30, 38%, 92%);
+  height: 100vh;
+  place-content: center;
 }
 
 .container {
   margin: 20px auto;
   border-radius: 8px;
   display: flex;
-  max-width: 50%;
+  flex: 1;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  max-width: 600px;
   background-color: white;
   overflow: auto;
 }
@@ -44,18 +50,26 @@ body {
 }
 
 .hero-img {
-  min-width: 50%;
+  /* flex-basis: 50%; */
+  /* min-width: 50%; */
+  /* flex: 1; */
 }
 
-/* .hero-img img {
-  display: block;
-  object-fit: cover;
-} */
+.hero-img,
+.container-text {
+  flex: 1;
+}
 
-@media screen and (max-width: 1118px) {
+.hero-img img {
+  display: block;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
   .container {
     display: block;
-    max-width: 90%;
+    margin: 2rem auto;
+    /* max-width: 21.4375rem; */
   }
 
   .hero-img {
